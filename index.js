@@ -147,7 +147,6 @@ const playTimer = async () => {
 // stop timer when recording is stopped
 const stopRecordTimer = () => {
     clearInterval(recordInterval)
-    // get player duration
 }
 // convert seconds to hh:mm:ss for timer display
 const formatTimerOutput = (seconds) => {
@@ -198,7 +197,6 @@ const getBlobDuration = async (blob) => {
     return durationP
 }
 /**
- * 
  * Event handlers
  */
 const onDataAvailableHandler = (evt) => {
@@ -336,7 +334,6 @@ const unregisterRecordListeners = (recorder) => {
     recorder.removeEventListener('pause', onRecordPauseHandler)
     recorder.removeEventListener('resume', onRecordResumeHandler)
 }
-
 const onMoveSliderHandler = evt => {
     console.log('moving handle')
     throttleSlider(moveSlider, evt, THROTTLE_TIME)

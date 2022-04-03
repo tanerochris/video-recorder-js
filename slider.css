@@ -1,0 +1,36 @@
+.slider-container {
+    height: 1.2rem;
+    user-select: none;
+}
+.slider-bar {
+    width: inherit;
+    display: flex;
+    height: inherit;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+    border: none;
+    padding: 2px 8px;
+    position: relative;
+}
+.slider-bar .slider-output {
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+}
+#ix-slider-bar .slider-handles {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+}
+.slider-handles:hover {
+    cursor: pointer;
+}
+
+.slider-handles {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}

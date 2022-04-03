@@ -1,0 +1,103 @@
+.ix-hidden {
+    display: none !important;
+}
+#ix-recorder {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+        "ix-video"
+        "ix-sliders"
+        "ix-controls";
+}
+#ix-video {
+    grid-area: ix-video;
+    grid-row: 1 / 2;
+    position: relative;
+}
+#ix-video video {
+    width: 100% !important;
+    height: auto !important;
+}
+#ix-video #ix-video-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    z-index: 9999999;
+}
+#ix-video #ix-video-overlay button.playBtn img{
+    height: 20vw;
+    opacity: 0.8;
+    max-height: 10rem;
+}
+
+#ix-controls {
+    grid-area: ix-controls;
+    display: grid;
+    padding-top: 0.1rem !important;
+}
+#ix-sliders {
+    grid-area: ix-sliders;
+    grid-row: 2 / 3;
+}
+
+#ix-video, #ix-controls,#ix-sliders {
+    grid-column: 1 / 9;
+    justify-content: center;
+    justify-items: center;
+}
+#ix-controls, #ix-sliders {
+    padding: 1rem 1rem;
+}
+#ix-sliders {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-areas:
+        "play timer";
+    justify-items: start;
+    align-items: center;
+}
+#ix-sliders .ix-play-stop {
+    grid-area: play;
+    grid-column: 1 / 2;
+    justify-self: end;
+    /* align-self: center; */
+}
+#ix-sliders #ix-timers {
+    grid-area: timer;
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 3;
+    width: 100%;
+    height: 100%;
+}
+#ix-control-buttons {
+    display: grid;
+    grid-template-rows: max-content auto max-content;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+        "set-left set-centre set-right";
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+}
+#ix-control-buttons .ix-control-set-left {
+    grid-area: set-left;
+    grid-column: 1 / 4;
+    display: flex;
+}
+#ix-control-buttons .ix-control-set-centre {
+    grid-area: set-centre;
+    grid-column: 4 / 7;
+    display: flex;
+    justify-content: center;
+}
+#ix-control-buttons .ix-control-set-right {
+    grid-area: set-right;
+    grid-column: 7 / 9;
+    display: flex;
+}
