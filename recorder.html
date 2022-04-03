@@ -1,23 +1,84 @@
 <div id="ix-recorder" class="theme-light">
     <div id="ix-video">
-      <!--Play button overlay-->
-      <!-- display image on capture-->
-      <!-- Show video-->
+      <div id="ix-video-overlay" class="theme-light ix-hidden">
+          <div class="ix-control">
+            <button id="playBtnOverlay" class="playBtn">
+              <img class="icon" src="./icons/play-light.svg"/>
+            </button>
+          </div>
+      </div>
+      <div id="ix-image-cont" class="ix-hidden">
+        <img id="ix-image" src="https://www.hellomagazine.com/imagenes/celebrities/20220330136790/chris-rock-family-break-silence-will-smith-oscars-update-slap-brother/0-665-74/chris-rock-brother-will-smith-t.webp?filter=high"/>
+        <span><img class="close-icon" src="./icons/close.svg" alt="close icon"/></span>
+      </div>
+      <video id="video-output" width="100%"></video>
     </div>
     <div id="ix-sliders">
-    <!-- Play/Pause control-->
-    <!-- Timers & slider bar (seek bar)-->
+      <div class="ix-play-stop">
+        <div class="ix-control">
+          <button id="playBtn">
+            <img class="icon" src="./icons/play.svg"/>
+          </button>
+          <button id="pauseBtn" class="ix-hidden">
+            <img class="icon" src="./icons/pause.svg"/>
+          </button>
+        </div>
+      </div>
+      <div id="ix-timers">
+          <div id="ix-time-slider">
+            <div class="slider-container">
+              <div id="ix-slider-bar" class="theme-light slider-bar" data-max="60" data-min="1" data-precision="2">
+                <output for="slider-handle" class="slider-output">-:-</output>
+                <input type="range" id="ix-slider-handle" class="slider-handles" min="0" max="50" value="0"/>
+                <output for="slider-handle" class="slider-output">-:-</output>
+              </div>
+            </div>
+          </div>
+          <div id="ix-trim-slider"></div>
+      </div>
     </div>
     <div id="ix-controls">
         <div id="ix-control-buttons">
           <div class="ix-control-set ix-control-set-left">
-            <!--Controls to trim recorded video (functionality will update as tutorial is updated.) -->
+            <div class="ix-control ix-hidden">
+              <button id="trimRecordBtn">
+                <img class="icon" src="./icons/trim.svg"/>
+              </button>
+            </div>
+              <div class="ix-control trim-ok-record ix-hidden">
+                <button id="trimOkRecordBtn">
+                  <img class="icon" src="./icons/trim-ok.svg"/>
+                </button>
+              </div>
+              <div class="ix-control trim-cancel-record ix-hidden">
+                <button id="trimCancelRecordBtn">
+                  <img class="icon" src="./icons/trim-cancel.svg"/>
+                </button>
+              </div>
           </div>
           <div class="ix-control-set ix-control-set-centre">
-            <!-- controls capture & record -->
+            <div class="ix-control capture-record">
+              <button id="captureRecordBtn">
+                <img class="icon" src="./icons/camera.svg"/>
+              </button>
+            </div>
+            <div class="ix-control stop-record ix-hidden" id="ix-stop-record">
+                <button id="stopRecordBtn">
+                  <img class="icon" src="./icons/record.svg"/>
+                </button>
+            </div>
+            <div class="ix-control start-record" id="ix-start-record">
+              <button id="startRecordBtn">
+                <img class="icon" src="./icons/record-start.svg"/>
+              </button>
+            </div>
           </div>
           <div class="ix-control-set ix-control-set-right">
-            <!-- controls capture & record -->
+            <div class="ix-control">
+              <button id="restartRecordBtn" class="ix-hidden">
+                <img class="icon" src="./icons/loop.svg"/>
+              </button>
+            </div>
           </div>
         </div>
     </div>
