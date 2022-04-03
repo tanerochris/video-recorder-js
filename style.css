@@ -1,0 +1,266 @@
+.ix-hidden {
+    display: none !important;
+}
+#ix-recorder {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+        "ix-video"
+        "ix-sliders"
+        "ix-controls";
+}
+#ix-video {
+    grid-area: ix-video;
+    grid-row: 1 / 2;
+    position: relative;
+}
+#ix-video video {
+    width: 100% !important;
+    height: auto !important;
+}
+#ix-video #ix-video-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    z-index: 9999999;
+}
+#ix-video #ix-video-overlay button.playBtn img{
+    height: 20vw;
+    opacity: 0.8;
+    max-height: 10rem;
+}
+
+#ix-controls {
+    grid-area: ix-controls;
+    display: grid;
+    padding-top: 0.1rem !important;
+}
+#ix-sliders {
+    grid-area: ix-sliders;
+    grid-row: 2 / 3;
+}
+
+#ix-video, #ix-controls,#ix-sliders {
+    grid-column: 1 / 9;
+    /* grid-row: 2 / 3; */
+    justify-content: center;
+    justify-items: center;
+}
+#ix-controls, #ix-sliders {
+    padding: 1rem 1rem;
+}
+#ix-sliders {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-areas:
+        "play timer";
+    /* justify-content: start; */
+    justify-items: start;
+    align-items: center;
+}
+#ix-sliders .ix-play-stop {
+    grid-area: play;
+    grid-column: 1 / 2;
+    justify-self: end;
+    /* align-self: center; */
+}
+#ix-sliders #ix-timers {
+    grid-area: timer;
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 3;
+    width: 100%;
+    height: 100%;
+}
+#ix-control-buttons {
+    display: grid;
+    grid-template-rows: max-content auto max-content;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+        "set-left set-centre set-right";
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    /* max-width: 20rem; */
+    /* grid-column: 3 / 7; */
+    /* grid-row: 3; */
+}
+#ix-control-buttons .ix-control-set-left {
+    grid-area: set-left;
+    grid-column: 1 / 4;
+    display: flex;
+}
+#ix-control-buttons .ix-control-set-centre {
+    grid-area: set-centre;
+    grid-column: 4 / 7;
+    display: flex;
+    justify-content: center;
+}
+#ix-control-buttons .ix-control-set-right {
+    grid-area: set-right;
+    grid-column: 7 / 9;
+    display: flex;
+}
+.ix-control button{
+    background: transparent;
+    border: none;
+}
+.ix-control button .icon {
+    height: 1.3rem;
+}
+
+.slider-container {
+    height: 1.2rem;
+    user-select: none;
+}
+.slider-bar {
+    width: inherit;
+    display: flex;
+    height: inherit;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+    border: none;
+    padding: 2px 8px;
+    position: relative;
+}
+.slider-bar .slider-output {
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+}
+#ix-slider-bar .slider-handles {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+}
+.slider-handles:hover {
+    cursor: pointer;
+}
+
+.slider-handles {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+#ix-image-cont {
+    position: absolute;
+    /* height: 11rem; */
+    width: 30%;
+    max-width: 10rem;
+    padding: 0.2rem;
+}
+#ix-image-cont img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border: solid white 2px;
+    border-radius: 5px;
+}
+#ix-image-cont span {
+    position: absolute;
+    z-index: 9999999;
+    left: 0.5rem;
+    top: 0.5rem;
+    height: max-content;
+    /* color: aquamarine; */
+    display: flex;
+    cursor: pointer;
+}
+#ix-image-cont span > .close-icon {
+    height: 1rem;
+    display: inline;
+}
+.theme-light {
+    background-color: #E4E3E2;
+}
+#ix-video-overlay.theme-light {
+    background: #373737;
+}
+
+.slider-bar.theme-light {
+    background-color: #E4E3E2;
+    box-shadow: 0px 0px 5px 0px #e4e3e2;
+}
+.slider-bar.theme-light {
+    
+}
+.theme-light output {
+    background: #E4E3E2;
+    color: #000;
+}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.theme-light .slider-handles::-webkit-slider-runnable-track {
+    background: #013D63;
+    height: 0.2rem;
+}
+/* Firefox */
+.theme-light .slider-handles::-moz-range-track {
+    background: #013D63;
+}
+/* The slider thumb (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.theme-light .slider-handles::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;  
+    background: #1E63B8;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    margin-top: -8px;
+}
+/* Firefox thumb */
+.theme-light .slider-handles::-moz-range-thumb {
+    background: #1E63B8;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    margin-top: -8px;
+    border: none;
+
+}
+/*--------------DARK THEME -----------------------------------*/
+.theme-dark output {
+    background: #94CE9C;
+    color: #FFF;
+}
+#slider-bar.theme-dark {
+    background-color: #373737;
+    box-shadow: 0px 0px 5px 0px #e4e3e2;
+
+}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.theme-dark .slider-handles::-webkit-slider-runnable-track {
+    background: #8AB6E9;
+    height: 0.2rem;
+}
+/* Firefox */
+.theme-dark .slider-handles::-moz-range-track {
+    background: #8AB6E9;
+}
+
+/* The slider thumb (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.theme-dark .slider-handles::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;  
+    background: #67A9ED;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    margin-top: -8px;
+}
+/* Firefox thumb */
+.theme-dark .slider-handles::-moz-range-thumb {
+    background: #67A9ED;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    margin-top: -8px;
+    border: none;
+}
